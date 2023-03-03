@@ -1,0 +1,42 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #93c5fd;
+  height: 100vh;
+  padding: 20px;
+}
+.content-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 25px;
+}
+.main-container-heading {
+  font-size: 28px;
+  color: #323f4b;
+  padding: 0px 0px 25px 0px;
+  font-weight: 500;
+}
+.option-input-container {
+  margin-bottom: 15px;
+}
+.select-option-style {
+  padding: 5px 15px 5px 10px;
+  margin-right: 10px;
+  border: 0.2px solid #cbd2d9;
+  outline: none;
+}
+.select-option-style :focus {
+  outline: none;
+}
+.showing-country-style {
+  font-size: 25px;
+  color: #323f4b;
+  font-weight: 500;
+}
