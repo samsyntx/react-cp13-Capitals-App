@@ -1,4 +1,5 @@
 import {Component} from 'react'
+
 import './index.css'
 
 const countryAndCapitalsList = [
@@ -29,19 +30,30 @@ const countryAndCapitalsList = [
   },
 ]
 class Capitals extends Component {
-  changeInputEle = () => {}
+  state = {countryId: 'NEW_DELHI'}
+
+  changeInputEle = event => {
+    this.setState({countryId: event.target.value})
+  }
 
   render() {
-    const countryNameAsPerCapital = 'Hello'
+    const {countryId} = this.state
+    const filteredCountryDetail = countryAndCapitalsList.filter(
+      eachDetail => eachDetail.id === countryId,
+    )
+    const popObjectFromList = filteredCountryDetail.pop()
+
+    const countryNameAsPerCapital = popObjectFromList.country
+
     return (
       <div className="main-container">
         <div className="content-container">
           <h1 className="main-container-heading">Countries And Capitals</h1>
           <div className="option-input-container">
             <select
+              onChange={this.changeInputEle}
               id="capitalDisplayText"
               className="select-option-style"
-              onChange={this.changeInputEle}
             >
               {countryAndCapitalsList.map(eachCity => (
                 <option key={eachCity.id} value={eachCity.id}>
